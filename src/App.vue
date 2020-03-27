@@ -1,31 +1,18 @@
 <template>
   <div id="app">
-    <breadcrumb></breadcrumb>
+    <!-- <router-link to="/">日报</router-link>
+    <router-link to="/index">业务统计</router-link>
+    <router-view /> -->
+    <dailyreport></dailyreport>
   </div>
 </template>
 
 <script>
-import Breadcrumb from './components/Breadcrumb.vue'
-//import BlogPost from './components/BlogPost.vue'
-
+import dailyreport from './statistics/dailyreport/dailyreport'
 
 export default {
-  name: 'app',
-  data : function () {
-    return {
-      posts: [
-        { id: 1, title: 'My journey with Vue' },
-        { id: 2, title: 'Blogging with Vue' },
-        { id: 3, title: 'Why Vue is so fun' }
-      ],
-      user: { 
-        name: 'chh',
-        password: 123456 
-      }
-    }
-  },
   components: {
-    Breadcrumb
+    dailyreport
   }
 }
 </script>
