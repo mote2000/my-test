@@ -1,110 +1,56 @@
 <template>
-  <div class="dailyreport">
-    <delivery-daily-report></delivery-daily-report>
-    <coordinate-daily-report></coordinate-daily-report>
-    <bd-daily-report></bd-daily-report>
+  <div id= "cdreport" style="padding-left: 19%;padding-top: 50px">
+    <el-form ref="obj" v-model="cdreport" label-width="150px" :inline="true" style="width: 1000px">
+      <el-form-item label="对接公司" prop="field2" >
+        <el-input  v-model= "cdreport.company" type="textarea" style="width: 250px" :rows="4" placeholder="公司名称" />
+      </el-form-item>
+      <el-form-item label="对接岗位" prop="field3" >
+        <el-input  v-model= "cdreport.case" type="textarea" style="width: 250px" :rows="4" placeholder="岗位+地点" />
+      </el-form-item>
+      <el-form-item label="今日面试量" prop="field4" >
+        <el-input  v-model= "cdreport.interview" type="textarea" style="width: 250px" :rows="4" placeholder= "数量" />
+      </el-form-item>
+      <el-form-item label="面试情况" prop="field5" >
+        <el-input  v-model= "cdreport.interviewcommon" type="textarea" style="width: 250px" :rows="4" placeholder="公司+岗位+姓名，并做简要说明。" />
+      </el-form-item>
+      <el-form-item label="待面试人数" prop="field6" >
+        <el-input  v-model= "cdreport.wfinterview" type="textarea" style="width: 250px" :rows="4" placeholder= "数量" />
+      </el-form-item>
+      <el-form-item label="待面试情况" prop="field7" >
+        <el-input  v-model= "cdreport.wfinterviewcommand" type="textarea" style="width: 250px" :rows="4" placeholder="公司+岗位+姓名"/>
+      </el-form-item>
+      <el-form-item label="简历待筛选数" prop="field8" >
+        <el-input  v-model= "cdreport.wfscreen" type="textarea" style="width: 250px" :rows="4" placeholder= "数量"/>
+      </el-form-item>
+      <el-form-item label="简历带筛选情况" prop="field9" >
+        <el-input  v-model= "cdreport.wfscreencommon" type="textarea" style="width: 250px" :rows="4" placeholder="公司+岗位+姓名" />
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
 <script>
-import deliverydailyreport from './deliverydailireport'
-import coordinatedailyreport from './coordinatedailyreport'
-import bddailyreport from './bddailyreport'
+  export default {
+    data () {
+      return {
+        cdreport: {
+          company: '',
+          case: '',
+          interview: '',
+          interviewcommon: '',
+          wfinterview: '',
+          wfinterviewcommand: '',
+          wfscreen: '',
+          wfscreencommon: ''
+        }
+      }
+    }    
 
-
-export default {
-  components: {
-    deliverydailyreport,
-    coordinatedailyreport,
-    bddailyreport
   }
-  
-}
 </script>
 
 <style lang="scss" scoped>
-  .table-d>>> table{ background:#dfe6ec}
-  .table-d>>> table td{ background:#FFF}
-.navbar {
-  height: 50px;
-  overflow: hidden;
-  position: relative;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
-  .hamburger-container {
-    line-height: 46px;
-    height: 100%;
-    float: left;
-    cursor: pointer;
-    transition: background .3s;
-    -webkit-tap-highlight-color:transparent;
-
-    &:hover {
-      background: rgba(0, 0, 0, .025)
-    }
-  }
-
-  .breadcrumb-container {
-    float: left;
-  }
-
-  .errLog-container {
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  .right-menu {
-    float: right;
-    height: 100%;
-    line-height: 50px;
-
-    &:focus {
-      outline: none;
-    }
-
-    .right-menu-item {
-      display: inline-block;
-      padding: 0 8px;
-      height: 100%;
-      font-size: 18px;
-      color: #5a5e66;
-      vertical-align: text-bottom;
-
-      &.hover-effect {
-        cursor: pointer;
-        transition: background .3s;
-
-        &:hover {
-          background: rgba(0, 0, 0, .025)
-        }
-      }
-    }
-
-    .avatar-container {
-      margin-right: 30px;
-
-      .avatar-wrapper {
-        margin-top: 5px;
-        position: relative;
-
-        .user-avatar {
-          cursor: pointer;
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
-        }
-
-        .el-icon-caret-bottom {
-          cursor: pointer;
-          position: absolute;
-          right: -20px;
-          top: 25px;
-          font-size: 12px;
-        }
-      }
-    }
-  }
-}
 </style>
-// 综合日志
+// 对接日志
+// cdreport： coordinate daily report的简称。对接公司的名称.
