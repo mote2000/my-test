@@ -1,19 +1,15 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <router-link to="/statistics/dailyreport/dailyreport">日报</router-link>
-    <router-link to="/statistics/index">业务统计</router-link>
-    <router-view />
- 
+    <nav-bar></nav-bar>
   </div>
 </template>
 
 <script>
-import navbar from './components/common/navbar'
+import NavBar from 'common/navbar/NavBar'
 
 export default {
   components: {
-    navbar
+    NavBar
   }
 }
 </script>
